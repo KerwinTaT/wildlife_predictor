@@ -5,7 +5,8 @@ from data_processor import DataProcessor
 app = Flask(__name__)
 
 # Instantiate ApiHandler with API keys
-api_handler = ApiHandler(openweathermap_api_key="ee9e8dc99954f000e07a583dfd152412", opencage_api_key="b8cd8b7ad6cd4435b414a0dc4d742d09")
+api_handler = ApiHandler(openweathermap_api_key="ee9e8dc99954f000e07a583dfd152412",
+                         opencage_api_key="b8cd8b7ad6cd4435b414a0dc4d742d09")
 
 def extract_lat_lon_from_location(project_location):
     lat, lon = project_location.split(', ')
