@@ -1,0 +1,66 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construction Wildlife Impact Predictor</title>
+    <style>
+        body {
+            background-color: #f0fff0; /* Light green background color */
+            font-size: 18px; /* Font size one step larger */
+            text-align: center; /* Center align content */
+            line-height: 1.6; /* Slightly spaced lines */
+        }
+
+        h1 {
+            color: #008000; /* Dark green color for the header */
+        }
+
+        form {
+            margin-top: 20px; /* Add some space above the form */
+        }
+
+        label, small {
+            display: block;
+            margin-bottom: 10px; /* Add space between form elements */
+        }
+
+        input, textarea {
+            width: 100%; /* Make input fields span the entire width */
+            font-size: 20px; /* Set font size one size larger */
+            padding: 8px; /* Add padding to input fields */
+            box-sizing: border-box; /* Include padding and border in the total width */
+            margin-bottom: 10px; /* Add space between input fields */
+        }
+
+        button {
+            padding: 10px; /* Add padding to the button */
+        }
+    </style>
+</head>
+<body>
+    <h1>Construction Wildlife Impact Predictor</h1>
+    <p>Welcome to the Construction Wildlife Impact Predictor! Please provide the following information to predict potential wildlife impacts on your construction project.</p>
+
+    <form action="/predict" method="post">
+        <label for="project_location">Project Location (Latitude, Longitude):</label>
+        <input type="text" id="project_location" name="project_location" placeholder="e.g., 37.7749, -122.4194" required>
+        <small>Enter the project location in the format "latitude, longitude."</small><br>
+
+        <label for="start_time">Start Time (YYYY-MM-DD HH:MM:SS):</label>
+        <input type="text" id="start_time" name="start_time" placeholder="e.g., 2023-01-01 08:00:00" required>
+        <small>Enter the start time in the format "YYYY-MM-DD HH:MM:SS."</small><br>
+
+        <label for="end_time">End Time (YYYY-MM-DD HH:MM:SS):</label>
+        <input type="text" id="end_time" name="end_time" placeholder="e.g., 2023-01-02 17:00:00" required>
+        <small>Enter the end time in the format "YYYY-MM-DD HH:MM:SS."</small><br>
+
+        <label for="project_description">Project Description:</label>
+        <textarea id="project_description" name="project_description" required></textarea><br>
+
+        <button type="submit">Predict</button>
+    </form>
+</body>
+</html>

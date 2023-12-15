@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construction Wildlife Impact Predictor - Results</title>
+    <style>
+        body {
+            background-color: #f0fff0; /* Light green background color */
+            font-size: 18px; /* Font size one step larger */
+            text-align: center; /* Center align content */
+            line-height: 1.6; /* Slightly spaced lines */
+        }
+
+        h1 {
+            color: #008000; /* Dark green color for the header */
+        }
+    </style>
+</head>
+<body>
+    <h1>Prediction Results</h1>
+
+    <!-- Display the processed data here -->
+    <p><strong>Result Message:</strong></p>
+    {% if 70 <= processed_data.additional_analysis_result.sunny_percentage <= 100 %}
+        <p style="color: green;">Good weather, good luck</p>
+    {% elif 50 <= processed_data.additional_analysis_result.sunny_percentage < 70 %}
+        <p style="color: green;">Looks good, hope everything goes well</p>
+    {% elif 30 <= processed_data.additional_analysis_result.sunny_percentage < 50 %}
+        <p style="color: orange;">I am a little concerned about your safety, I hope you will think about it</p>
+    {% else %}
+        <p style="color: red;">We don't recommend you start building at this time of the year, you can do it at another time</p>
+    {% endif %}
+
+    <p><strong>Additional Analysis:</strong></p>
+    <p>Sunny Days: {{ processed_data['additional_analysis_result'].sunny_days }} out of {{ processed_data['additional_analysis_result'].total_days }} ({{ processed_data['additional_analysis_result'].sunny_percentage }}% sunny)</p>
+
+</body>
+</html>
